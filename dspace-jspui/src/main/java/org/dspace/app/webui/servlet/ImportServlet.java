@@ -767,6 +767,13 @@ public class ImportServlet extends DSpaceServlet {
         }
 
 
+        try{
+            PreparedStatement statement = null;
+            statement = context.getDBConnection().prepareStatement("DELETE FROM workflowitem WHERE item_id=" + ti.getID());
+            int ij = statement.executeUpdate();
+        } catch(Exception e){
+
+        }
 
         ti.update();
         context.commit();
