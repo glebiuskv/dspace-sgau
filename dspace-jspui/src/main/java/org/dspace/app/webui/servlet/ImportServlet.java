@@ -30,13 +30,13 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.*;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -55,15 +55,30 @@ public class ImportServlet extends DSpaceServlet {
                            HttpServletResponse response) throws ServletException, IOException,
             SQLException, AuthorizeException {
 
-        
+
         request.setAttribute("community_id", request.getParameter("community_id"));
-        request.setAttribute("collection_id", request.getParameter("collection_id"));
+	    String collection_id = request.getParameter("collection_id");
+	    request.setAttribute("collection_id", collection_id);
 
+	    boolean forbiden = false;
+	    if (collection_id != null) {
+		    try (PreparedStatement pstm = context.getDBConnection().prepareStatement("SELECT count(*) FROM collection WHERE collection_id = ? AND( workflow_step_1 IS NOT NULL OR workflow_step_2 IS NOT NULL OR workflow_step_3 IS NOT NULL)")){
+			    pstm.setInt(1, Integer.valueOf(collection_id));
+			    try (ResultSet resultSet = pstm.executeQuery();){
+				    resultSet.next();
+				    int cnt = resultSet.getInt(1);
+				    if (cnt > 0) forbiden = true;
+			    }
+		    } catch (SQLException | NumberFormatException e) {
+			    log.error(e.getLocalizedMessage(), e);
+		    }
+	    }
 
+	    request.setAttribute("forbiden", forbiden);
 
-        response.setCharacterEncoding("UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        request.getRequestDispatcher("/import/import-home.jsp").forward(request, response);
+	    response.setCharacterEncoding("UTF-8");
+	    request.setCharacterEncoding("UTF-8");
+	    request.getRequestDispatcher("/import/import-home.jsp").forward(request, response);
 
     }
 
