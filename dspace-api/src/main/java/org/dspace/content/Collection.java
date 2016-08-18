@@ -480,7 +480,7 @@ public class Collection extends DSpaceObject
         StringBuffer query = new StringBuffer(
                 "SELECT c.* FROM collection c LEFT JOIN metadatavalue m ON " +
                         "( m.resource_id = c.collection_id AND m.resource_type_id = ? AND m.metadata_field_id = ?) " +
-                        "WHERE c.workflow_step_1 IS NOT NULL AND c.workflow_step_2 IS NOT NULL AND c.workflow_step_3 IS NOT NULL"
+                        "WHERE c.workflow_step_1 IS NULL AND c.workflow_step_2 IS NULL AND c.workflow_step_3 IS NULL"
         );
 
         if (DatabaseManager.isOracle()) {
