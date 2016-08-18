@@ -49,9 +49,11 @@
         <input type="hidden" name="community_id" value="<%=community_id %>" />
         <br>
         <br>
-        <input class="btn btn-primary pull-left col-md-3" id="metadata_import_omg" type="submit" name="submit" value="Найти">
+        <br>
+        <input class="btn btn-primary  col-md-3" id="metadata_import_omg" type="submit" name="submit" value="Найти">
     </form>
 
+    <br>
     <br>
     <br>
     <b>Поиск по имени и заголовку</b><br>

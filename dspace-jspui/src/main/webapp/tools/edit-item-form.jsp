@@ -199,9 +199,20 @@
 	<script type="text/javascript" src="<%= request.getContextPath() %>/static/js/scriptaculous/controls.js"></script>		
     <script type="text/javascript" src="<%= request.getContextPath() %>/dspace-admin/js/bitstream-ordering.js"></script>
 </c:set>
+<SCRIPT language="JavaScript">
+function say_hi()
+{
+    var hi= confirm("Вы действительно хотите внести изменения?");
+    if (hi== true){
+        return false;
+    }else{
+        return false;
+    }
+}
+ </SCRIPT
 
 <dspace:layout style="submission" titlekey="jsp.tools.edit-item-form.title"
-               navbar="admin"
+               navbar="default"
                locbar="link"
                parenttitlekey="jsp.administer"
                parentlink="/dspace-admin"
@@ -697,9 +708,10 @@
         <input type="hidden" name="action" value="<%= EditItemServlet.UPDATE_ITEM %>"/>
 					
                         <%-- <input type="submit" name="submit" value="Update" /> --%>
-                        <input class="btn btn-primary pull-right col-md-3" type="submit" name="submit" value="<fmt:message key="jsp.tools.general.update"/>" />
+                        <input class="btn btn-primary pull-right col-md-3" id="upd" onclick="return (confirm('Вы действительно хотите обновить ресурс?'))" type="submit" name="submit" value="<fmt:message key="jsp.tools.general.update"/>" />
                         <%-- <input type="submit" name="submit_cancel" value="Cancel" /> --%>
 						<input class="btn btn-default pull-right col-md-3" type="submit" name="submit_cancel" value="<fmt:message key="jsp.tools.general.cancel"/>" />
 					</div>
     </form>
+
 </dspace:layout>

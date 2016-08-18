@@ -169,9 +169,9 @@
           <dc-element>description</dc-element>
           <dc-qualifier>abstract</dc-qualifier>
           <repeatable>false</repeatable>
-          <label>Краткая выжимка</label>
+          <label>Аннотация</label>
           <input-type>textarea</input-type>
-          <hint>Введите краткую выжимку из ресурса </hint>
+          <hint>Введите аннотацию ресурса </hint>
           <required></required>
         </field>
 
@@ -180,7 +180,7 @@
           <dc-element>description</dc-element>
           <dc-qualifier>sponsorship</dc-qualifier>
           <repeatable>false</repeatable>
-          <label>Спонсоры</label>
+          <label>Финансовая поддержка</label>
           <input-type>textarea</input-type>
           <hint>Введите имена спонсоров и коды финансирования </hint>
           <required></required>

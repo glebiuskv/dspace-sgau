@@ -113,11 +113,7 @@ public class CompleteStep extends AbstractProcessingStep
             item.addMetadata(MetadataSchema.DC_SCHEMA, "identifier", null, "ru", "Dspace\\SGAU\\" + dateFormat.format(date) + "\\" + item.getID());
 
 
-        try {
-            ItemExport.exportItemToFolder(context,item,"/home/dspace/1C",0,false);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
 
         // Start the workflow for this Submission
@@ -154,7 +150,14 @@ public class CompleteStep extends AbstractProcessingStep
             }
         }
 
-
+        try {
+            if(HandleManager.getCanonicalForm(item.getHandle()) != null) {
+                ItemExport.exportItemToFolder(context, item, "/home/dspace/1C", 0, false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
 
         return STATUS_COMPLETE;
     }

@@ -210,7 +210,7 @@
         <property name="sidebarFacets">
             <list>
                 <ref bean="searchFilterAuthor" />
-                <ref bean="searchFilterSubject" />
+                <ref bean="searchFilterCoverage" />
                 <ref bean="searchFilterIssued" />
 		
             </list>
@@ -392,7 +392,6 @@
         <property name="indexFieldName" value="author"/>
         <property name="metadataFields">
             <list>
-                <value>dc.contributor.author</value>
                 <value>dc.creator</value>
             </list>
         </property>

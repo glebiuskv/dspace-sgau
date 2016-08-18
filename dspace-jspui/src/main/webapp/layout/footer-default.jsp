@@ -39,12 +39,21 @@
 </main>
             <%-- Page footer --%>
              <footer class="navbar navbar-inverse navbar-bottom">
-             <div id="designedby" class="container text-muted">
-			<div id="footer_feedback" class="pull-right">                                    
-                                <p class="text-muted"><a href="http://ssau.ru">Самарский университет</a> © 2016&nbsp;-
-                                <a target="_blank" href="<%= request.getContextPath() %>/feedback"><fmt:message key="jsp.layout.footer-default.feedback"/></a>
-                                <a href="<%= request.getContextPath() %>/htmlmap"></a></p>
-                                </div>
+<div id="designedby" class="container text-muted">
+                <img class="footer-logo" src="/image/logo_goriz_rus_eng_224.svg" alt=""/>
+                <div class="copy">
+                   <span>Самарский университет &copy; 2016 </span>
+                   <a href="http://www.ssau.ru">www.ssau.ru</a>
+                   | <a href="mailto:ssau@ssau.ru">ssau@ssau.ru</a>
+                   | <a target="_blank" href="/jspui//feedback">Обратная связь</a>
+                </div>
+
+			<!--<div id="footer_feedback" class="pull-right">                                    -->
+                                <!--<p class="text-muted"><a href="http://ssau.ru/">Самарский университет</a> © 2016&nbsp;- -->
+                                <!--<a target="_blank" href="/jspui/feedback">Обратная связь </a>-->
+                                <!--<a href="htmlmap.html"></a></p>-->
+          <!--</div>-->
+
 			</div>
     </footer>
     </body>

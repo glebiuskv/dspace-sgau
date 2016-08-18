@@ -167,7 +167,7 @@
                                     <input type="hidden" name="item_id" value="<%= item.getID() %>" />
                                     <input type="hidden" name="action" value="reimport" />
                                     <%--<input type="submit" name="submit" value="Обновить метаданные">--%>
-                                    <input class="btn btn-default col-md-12" type="submit" name="submit" value="Обновить метаданные"/>
+                                    <input class="btn btn-default col-md-12" type="submit" onclick="return (confirm('Вы действительно хотите обновить ресурс? Внесенные ранее изменения будут утеряны!'))" name="submit" value="Обновить метаданные"/>
                                 </form>
                 <%
                 }

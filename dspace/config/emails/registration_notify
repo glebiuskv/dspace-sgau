@@ -8,10 +8,10 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: DSpace: Registration Notification
+Subject: DSpace: Уведомление о регистрации
 
-A new user has registered on {0} at {1}:
+Новый пользователь зарегистрировался в Репозитории Самарского национального исследовательского университета имени академика С.П. Королёва http://repo.ssau.ru:
 
-Name:                   {2}
+Имя:                   {2}
 Email:                  {3}
-Date:                   {4}
+Дата:                   {4}
