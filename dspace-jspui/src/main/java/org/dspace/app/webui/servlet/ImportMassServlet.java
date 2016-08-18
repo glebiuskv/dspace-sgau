@@ -72,7 +72,7 @@ public class ImportMassServlet extends DSpaceServlet {
                            HttpServletResponse response) throws ServletException, IOException,
             SQLException, AuthorizeException {
 
-        Collection[] col = Collection.findAll(context);
+        Collection[] col = Collection.findAllWithoutWorkflow(context);
 
         TableRowIterator tri = DatabaseManager.queryTable(context, "folders", "SELECT * FROM folders");
         request.setAttribute("systems", tri);
