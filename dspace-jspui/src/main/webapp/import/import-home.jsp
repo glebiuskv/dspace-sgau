@@ -21,7 +21,7 @@
 		</c:when>
 		<c:otherwise>
 			<b>Поиск по идентификатору</b><br>
-			<form action="/import-item" method="post" name="edit_metadata" id="edit_metadata"
+			<form action="/import-item" method="post" name="cd edit_metadata" id="edit_metadata"
 			      onkeydown="return disableEnterKey(event);">
 			<span class="col-md-5">
 			<input class="form-control" type="text" id="metadata_import_val" name="uuid_search"

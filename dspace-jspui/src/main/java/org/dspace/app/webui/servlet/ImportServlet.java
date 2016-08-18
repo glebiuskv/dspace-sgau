@@ -59,7 +59,7 @@ public class ImportServlet extends DSpaceServlet {
         request.setAttribute("community_id", request.getParameter("community_id"));
 	    String collection_id = request.getParameter("collection_id");
 	    request.setAttribute("collection_id", collection_id);
-
+	    log.info("==> collection_id:"+ collection_id);
 	    boolean forbiden = false;
 	    if (collection_id != null) {
 		    try (PreparedStatement pstm = context.getDBConnection().prepareStatement("SELECT count(*) FROM collection WHERE collection_id = ? AND( workflow_step_1 IS NOT NULL OR workflow_step_2 IS NOT NULL OR workflow_step_3 IS NOT NULL)")){
@@ -73,7 +73,7 @@ public class ImportServlet extends DSpaceServlet {
 			    log.error(e.getLocalizedMessage(), e);
 		    }
 	    }
-
+		log.info("==> forbiden:"+forbiden);
 	    request.setAttribute("forbiden", forbiden);
 
 	    response.setCharacterEncoding("UTF-8");
