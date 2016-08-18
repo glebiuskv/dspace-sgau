@@ -32,8 +32,10 @@
 				<div class="row">
 					<input type="hidden" name="collection_id" value="<%=collection_id %>"/>
 					<input type="hidden" name="community_id" value="<%=community_id %>"/>
-					<input class="btn btn-primary pull-left col-md-3" id="metadata_import_omg" type="submit"
-					       name="submit" value="Найти">
+					<span class="col-md-5">
+						<input class="btn btn-primary pull-left col-md-3" id="metadata_import_omg" type="submit"
+						       name="submit" value="Найти">
+					</span>
 				</div>
 			</form>
 
@@ -56,8 +58,10 @@
 					<input type="hidden" name="collection_id" value="<%=collection_id %>"/>
 					<input type="hidden" name="community_id" value="<%=community_id %>"/>
 					<input type="hidden" name="action" value="search"/>
-					<input class="btn btn-primary pull-left col-md-3" id="metadata_import_name_omg" type="submit"
-					       name="submit" value="Найти">
+					<span class="col-md-5">
+						<input class="btn btn-primary pull-left col-md-3" id="metadata_import_name_omg" type="submit"
+						       name="submit" value="Найти">
+					</span>
 				</div>
 			</form>
 		</c:otherwise>
