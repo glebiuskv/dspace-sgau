@@ -186,7 +186,7 @@ public class ImportServlet extends DSpaceServlet {
             String name = request.getParameter("name");
             String title = request.getParameter("title");
 
-            if(name.equals(""))
+            if (name != null && name.equals(""))
                 name = null;
 
             if(title.equals(""))
