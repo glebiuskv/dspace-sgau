@@ -127,8 +127,10 @@ public class SoapHelper {
         }
 
         try {
+            log.info("===> XML \n " + responseString);
             return builder.parse(new ByteArrayInputStream(responseString.getBytes()));
         } catch (SAXException e) {
+            log.error(e.getMessage(), e);
             return null;
         } catch (IOException e) {
             return null;
@@ -246,8 +248,10 @@ public class SoapHelper {
         }
 
         try {
+            log.info("===> XML \n " + responseString);
             return builder.parse(new ByteArrayInputStream(responseString.getBytes()));
         } catch (SAXException e) {
+            log.error(e.getMessage(), e);
             return null;
         } catch (IOException e) {
             return null;
@@ -352,8 +356,10 @@ public class SoapHelper {
         }
 
         try {
+            log.info("===> XML \n " + responseString);
             return builder.parse(new ByteArrayInputStream(responseString.getBytes()));
         } catch (SAXException e) {
+            log.error(e.getMessage(), e);
             return null;
         } catch (IOException e) {
             return null;

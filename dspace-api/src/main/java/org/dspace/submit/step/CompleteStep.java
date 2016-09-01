@@ -162,7 +162,7 @@ public class CompleteStep extends AbstractProcessingStep
         return STATUS_COMPLETE;
     }
 
-    /**
+    /**1
      * Retrieves the number of pages that this "step" extends over. This method
      * is used to build the progress bar.
      * <P>
