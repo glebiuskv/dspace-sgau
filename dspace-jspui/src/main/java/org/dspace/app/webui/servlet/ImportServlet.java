@@ -189,7 +189,7 @@ public class ImportServlet extends DSpaceServlet {
             if (name != null && name.equals(""))
                 name = null;
 
-            if(title.equals(""))
+            if(title != null && title.equals(""))
                 title = null;
             Document doc = null;
             try {
